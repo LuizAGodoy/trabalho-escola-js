@@ -74,7 +74,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 </Dropdown.Item>
                 <Dropdown.Item onClick={registrarNota}>Registrar Notas</Dropdown.Item>
                 <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
-                <Dropdown.Item onClick={teste}>Data da Prova</Dropdown.Item>
+                <Dropdown.Item onClick={teste}>Registrar Materia Add</Dropdown.Item>
                 
               </DropdownButton>
             </InputGroup>

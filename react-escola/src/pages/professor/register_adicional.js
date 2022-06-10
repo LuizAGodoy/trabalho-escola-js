@@ -62,7 +62,7 @@ const handleSubmit = (e) => {
     <Container className="py-5">
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Label>Notas</Form.Label>
+          <Form.Label>Aluno</Form.Label>
           <Form.Control required as="select" onChange={(e) => setEmail(e.target.value)}>
             <option>Selecione o Aluno</option>
             {post.map((post) => (
@@ -77,7 +77,7 @@ const handleSubmit = (e) => {
 
                   <Form.Control
                   required
-                  placeholder="Nota de 0 a 100"
+                  placeholder="Nome da Material"
                   size="sm"
                     type="text"
                     id="nome"
@@ -89,7 +89,7 @@ const handleSubmit = (e) => {
 
                   <Form.Control
                   required
-                  placeholder="Nota de 0 a 100"
+                  placeholder="Valor da material"
                   size="sm"
                     type="text"
                     label="valor"
@@ -97,12 +97,13 @@ const handleSubmit = (e) => {
                     onChange={(e) => setValor(e.target.value)}
                   />
 
-              
+<div class="p-3"> </div>
         </Form.Group>
-
+              
         <Button variant="primary" type="submit" >
           Enviar
         </Button>
+        
       </Form>
     </Container>
   );
