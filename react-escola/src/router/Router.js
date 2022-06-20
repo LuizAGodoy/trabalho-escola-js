@@ -39,6 +39,15 @@ function Router() {
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <Aluno logoutUser={logoutUser} />
           </Route>
+
+          <Route exact path="/responsavel">
+            <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <Aluno logoutUser={logoutUser} />
+          </Route>
+
+
+
+
           <Route exact path="/aluno/notas">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <NotasAlunos logoutUser={logoutUser} setLogoutUser={setLogoutUser} />

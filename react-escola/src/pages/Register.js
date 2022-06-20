@@ -64,6 +64,9 @@ const Register = ({ setLogoutUser }) => {
         if (tipo === "Secretaria") {
           history.push("/secretaria");
         }
+        if (tipo === "Responsavel") {
+          history.push("/responsavel");
+        }
       })
       .catch((error) => setError(error.response));
   };
@@ -151,6 +154,16 @@ const Register = ({ setLogoutUser }) => {
                 value="Secretaria"
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
+
+                <Form.Check
+                inline
+                label="Responsavel"
+                checked={tipo === "Responsavel"}
+                onChange={handleChange}
+                value="Responsavel"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />  
+
             </Form.Group>
           </Row>
 
