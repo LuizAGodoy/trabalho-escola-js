@@ -33,6 +33,10 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/aluno/data-prova";
   };
 
+  const dataMatadd = () => {
+    window.location.href = "/aluno/mat-add";
+  };
+
   const registerProva = () => {
     window.location.href = "/professor/data-prova";
   };
@@ -124,6 +128,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                   Minhas Notas
                 </Dropdown.Item>
                 <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
+                <Dropdown.Item onClick={dataMatadd}>Materia Adicional</Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>

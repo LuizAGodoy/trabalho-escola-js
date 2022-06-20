@@ -168,23 +168,6 @@ const NotasAlunos = () => {
         </Table>
       </ListGroup>
 
-    <Table>
-          <thead>
-            <tr>
-              <th>Materia adicional:</th>
-              <th>Valor</th>
-            </tr>
-          </thead>
-          <tbody>
-            {add.map((add) => (
-            <tr>
-              <td>{add.nome}</td>
-               <td>{add.valor}</td>
-            </tr>
-             ))}
-            </tbody>
-      </Table>
-
     
 
     </div>

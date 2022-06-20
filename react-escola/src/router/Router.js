@@ -9,6 +9,7 @@ import Home from "../pages/Home";
 import Aluno from "../pages/Aluno";
 import NotasAlunos from "../pages/aluno/notas_aluno";
 import DataProva from "../pages/aluno/data_prova";
+import DataMatadd from "../pages/aluno/notas_aluno_mat_add";
 import RegisterNota from "../pages/professor/register_nota";
 import RegisterProvaAdd from "../pages/professor/register_adicional";
 import Teste from "../pages/professor/teste";
@@ -46,6 +47,14 @@ function Router() {
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <DataProva logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
+
+
+          <Route exact path="/aluno/mat-add">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <DataMatadd logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+
+
           <Route exact path="/professor/data-prova">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <RegisterProva />
