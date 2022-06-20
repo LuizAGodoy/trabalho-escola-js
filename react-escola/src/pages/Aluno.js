@@ -7,7 +7,7 @@ const NotasAlunos = () => {
 
   return (
     <Container>
-      <h1>Bem Vindo</h1>
+      <h1>Bem Vindo!</h1>
       <p>{login}</p>
     </Container>
   );
