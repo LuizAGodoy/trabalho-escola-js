@@ -33,9 +33,6 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/aluno/data-prova";
   };
 
-  const dataMatadd = () => {
-    window.location.href = "/aluno/mat-add";
-  };
 
   const registerProva = () => {
     window.location.href = "/professor/data-prova";
@@ -48,6 +45,14 @@ const Header = ({ logoutUser, setLogoutUser }) => {
   const teste = () => {
     window.location.href = "/registrar"
   }
+
+  const dataMatsecre = () => {
+    window.location.href = "/responsavel/mateadd";
+  };
+
+  const dataMatadd = () => {
+    window.location.href = "/aluno/mat-add";
+  };
 
   const hydrateStateWithLocalStorage = () => {
     if (localStorage.hasOwnProperty("login")) {
@@ -186,7 +191,43 @@ const Header = ({ logoutUser, setLogoutUser }) => {
         </Container>
       </Navbar>
     </div>
-  ) : (
+  ) : isLogin.user.tipo === "Responsavel" ? (
+    <div>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#nav">
+            <InputGroup align="start">
+              <DropdownButton
+                variant="outline-secondary"
+                id="input-group-dropdown-2"
+                align="start"
+                title="Menu"
+                >
+                <Dropdown.Item onClick={dataMatsecre}>Materia Adicional</Dropdown.Item>
+              </DropdownButton>
+            </InputGroup>
+          </Navbar.Brand>
+          <Navbar.Brand>
+            <Nav.Link href="/responsavel">
+              <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
+              {isLogin.user.nome}
+            </Nav.Link>
+          </Navbar.Brand>
+          <Nav className="mr-auto">
+            <InputGroup align="end">
+              <DropdownButton
+                variant="outline-secondary"
+                id="input-group-dropdown-2"
+                align="end"
+              >
+                <Dropdown.Item onClick={logout}>Sair</Dropdown.Item>
+              </DropdownButton>
+            </InputGroup>
+          </Nav>
+        </Container>
+      </Navbar>
+    </div>
+  ): (
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
