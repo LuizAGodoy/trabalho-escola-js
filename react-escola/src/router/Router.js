@@ -8,6 +8,8 @@ import ListaMaterias from "../pages/ListaMaterias";
 import Home from "../pages/Home";
 import Aluno from "../pages/Aluno";
 import NotasAlunos from "../pages/aluno/notas_aluno";
+import NotasTurma from "../pages/secretaria/notas_turma";
+import FaltaTurma from "../pages/secretaria/falta_turma";
 import DataProva from "../pages/aluno/data_prova";
 import RegisterNota from "../pages/professor/register_nota";
 import RegisterProvaAdd from "../pages/professor/register_adicional";
@@ -41,6 +43,14 @@ function Router() {
           <Route exact path="/aluno/notas">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <NotasAlunos logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+          <Route exact path="/secretaria/notas-turma">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <NotasTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+          <Route exact path="/secretaria/falta-turma">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <FaltaTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
           <Route exact path="/aluno/data-prova">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
