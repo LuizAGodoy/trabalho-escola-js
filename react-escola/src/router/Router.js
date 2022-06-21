@@ -15,6 +15,8 @@ import DataMatadd from "../pages/aluno/notas_aluno_mat_add";
 import RegisterNota from "../pages/professor/register_nota";
 import RegisterProvaAdd from "../pages/professor/register_adicional";
 import DataMatsecre from "../pages/responsavel/mat_add";
+import ResDataProva from "../pages/responsavel/res-data-prova";
+import ResNotas from "..pages/responsavel/res-notas";
 import Teste from "../pages/professor/teste";
 
 
@@ -54,12 +56,12 @@ function Router() {
             <DataMatsecre logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
 
-          <Route exact path="/responsavel/data-prova">
+          <Route exact path="/responsavel/res-data-prova">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <DataProva logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
 
-          <Route exact path="/responsavel/notas">
+          <Route exact path="/responsavel/res-notas">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <NotasAlunos logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
