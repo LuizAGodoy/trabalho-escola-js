@@ -57,6 +57,14 @@ const Header = ({ logoutUser, setLogoutUser }) => {
   const dataMatsecre = () => {
     window.location.href = "/responsavel/mateadd";
   };
+  
+   const dataMatsecre = () => {
+    window.location.href = "/responsavel/data-prova";
+  };
+  
+     const dataMatsecre = () => {
+    window.location.href = "/responsavel/notas";
+  };
 
   const dataMatadd = () => {
     window.location.href = "/aluno/mat-add";
@@ -218,6 +226,12 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 title="Menu"
                 >
                 <Dropdown.Item onClick={dataMatsecre}>Materia Adicional</Dropdown.Item>
+                <Dropdown.Item onClick={notasAlunos}>
+                  Notas
+                </Dropdown.Item>
+                <Dropdown.Item onClick={dataMatadd}>Registrar Matéria Adicional</Dropdown.Item>
+                <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
+                <Dropdown.Item onClick={dataMatadd}>Materia Adicional</Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
