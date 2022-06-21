@@ -15,9 +15,7 @@ import DataMatadd from "../pages/aluno/notas_aluno_mat_add";
 import RegisterNota from "../pages/professor/register_nota";
 import RegisterProvaAdd from "../pages/professor/register_adicional";
 import DataMatsecre from "../pages/responsavel/mat_add";
-import ResDataProva from "../pages/responsavel/res-data-prova";
-import ResNotas from "..pages/responsavel/res-notas";
-import Teste from "../pages/professor/teste";
+
 
 
 function Router() {
