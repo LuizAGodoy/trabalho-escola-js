@@ -29,6 +29,14 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/aluno/notas";
   };
 
+  const notasTurma = () => {
+    window.location.href = "/secretaria/notas-turma";
+  };
+
+  const faltaTurma = () => {
+    window.location.href = "/secretaria/falta-turma";
+  };
+
   const dataProva = () => {
     window.location.href = "/aluno/data-prova";
   };
@@ -170,6 +178,12 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 title="Menu"
               >
                 <Dropdown.Item>Secretaria</Dropdown.Item>
+                <Dropdown.Item onClick={notasTurma}>
+                  Notas Turma
+                </Dropdown.Item>
+                <Dropdown.Item onClick={faltaTurma}>
+                  Faltas Turma
+                </Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
