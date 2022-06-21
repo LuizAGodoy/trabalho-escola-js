@@ -58,12 +58,12 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/responsavel/mateadd";
   };
   
-   const dataMatsecre = () => {
-    window.location.href = "/responsavel/data-prova";
+   const ResDataProva = () => {
+    window.location.href = "/responsavel/res-data-prova";
   };
   
-     const dataMatsecre = () => {
-    window.location.href = "/responsavel/notas";
+     const ResNotas = () => {
+    window.location.href = "/responsavel/res-notas";
   };
 
   const dataMatadd = () => {
