@@ -11,9 +11,12 @@ import NotasAlunos from "../pages/aluno/notas_aluno";
 import NotasTurma from "../pages/secretaria/notas_turma";
 import FaltaTurma from "../pages/secretaria/falta_turma";
 import DataProva from "../pages/aluno/data_prova";
+import DataMatadd from "../pages/aluno/notas_aluno_mat_add";
 import RegisterNota from "../pages/professor/register_nota";
 import RegisterProvaAdd from "../pages/professor/register_adicional";
+import DataMatsecre from "../pages/responsavel/mat_add";
 import Teste from "../pages/professor/teste";
+
 
 function Router() {
   const [logoutUser, setLogoutUser] = useState(false);
@@ -40,10 +43,23 @@ function Router() {
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <Aluno logoutUser={logoutUser} />
           </Route>
+
+          <Route exact path="/responsavel">
+            <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <Aluno logoutUser={logoutUser} />
+          </Route>
+
+          <Route exact path="/responsavel/mateadd">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <DataMatsecre logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+
+
           <Route exact path="/aluno/notas">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <NotasAlunos logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
+
           <Route exact path="/secretaria/notas-turma">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <NotasTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
@@ -52,10 +68,18 @@ function Router() {
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <FaltaTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
+
           <Route exact path="/aluno/data-prova">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <DataProva logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
+
+          <Route exact path="/aluno/mat-add">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <DataMatadd logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+
+
           <Route exact path="/professor/data-prova">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <RegisterProva />

@@ -55,9 +55,12 @@ const Login = ({ setLogoutUser }) => {
         if (tipo === "Aluno") {
           history.push("/aluno");
         }
-        if (tipo === "Secretaria") {
-          history.push("/secretaria");
+        if (tipo === "Responsavel") {
+          history.push("/responsavel");
         }
+        if (tipo === "Secretaria") {
+            history.push("/secretaria");
+          }
       })
       .catch((error) => setError(error.response.data.message));
   };
@@ -130,6 +133,15 @@ const Login = ({ setLogoutUser }) => {
                 checked={tipo === "Professor"}
                 onChange={handleChange}
                 value="Professor"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+              <Form.Check
+
+                inline
+                label="Responsavel"
+                checked={tipo === "Responsavel"}
+                onChange={handleChange}
+                value="Responsavel"
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
               <Form.Check

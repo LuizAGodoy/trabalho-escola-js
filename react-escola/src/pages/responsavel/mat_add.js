@@ -44,14 +44,14 @@ const NotasAlunos = () => {
               <th>AVALIAÇÃO 1</th>
               <th>AVALIAÇÃO 2</th>
               <th>Media</th>
-              <th>Aprovador / Reprovado</th>
+              <th>Aprovado / Reprovado</th>
             </tr>
           </thead>
           <tbody>
             {/* se post for vazio */}
             {post.length === 0 ? (
               <tr>
-                <td>Portugues</td>
+                <td>Português</td>
                 <td> - </td>
                 <td> - </td>
                 <td> - </td>
@@ -60,7 +60,7 @@ const NotasAlunos = () => {
             ) : (
               post.map((post) => (
                 <tr>
-                  <td>Portugues</td>
+                  <td>Português</td>
                   <td>{post.a1portugues}</td>
                   <td>{post.a2portugues}</td>
                   <td>
@@ -80,7 +80,7 @@ const NotasAlunos = () => {
 
             {post.length === 0 ? (
               <tr>
-                <td>Matematica</td>
+                <td>Matemática</td>
                 <td> - </td>
                 <td> - </td>
                 <td> - </td>
@@ -89,7 +89,7 @@ const NotasAlunos = () => {
             ) : (
               post.map((post) => (
                 <tr>
-                  <td>Matematica</td>
+                  <td>Matemática</td>
                   <td>{post.a1matematica}</td>
                   <td>{post.a2matematica}</td>
                   <td>
@@ -109,7 +109,7 @@ const NotasAlunos = () => {
 
             {post.length === 0 ? (
               <tr>
-                <td>Historia</td>
+                <td>História</td>
                 <td> - </td>
                 <td> - </td>
                 <td> - </td>
@@ -118,15 +118,15 @@ const NotasAlunos = () => {
             ) : (
               post.map((post) => (
                 <tr>
-                  <td>Historia</td>
-                  <td>{post.a1portugues}</td>
-                  <td>{post.a2portugues}</td>
+                  <td>História</td>
+                  <td>{post.a1historia}</td>
+                  <td>{post.a2historia}</td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1historia) + parseInt(post.a2historia)) /
                       2}
                   </td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1historia) + parseInt(post.a2historia)) /
                       2 >=
                     6
                       ? "Aprovado"
@@ -148,14 +148,14 @@ const NotasAlunos = () => {
               post.map((post) => (
                 <tr>
                   <td>Artes</td>
-                  <td>{post.a1portugues}</td>
-                  <td>{post.a2portugues}</td>
+                  <td>{post.a1artes}</td>
+                  <td>{post.a2artes}</td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1artes) + parseInt(post.a2artes)) /
                       2}
                   </td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1artes) + parseInt(post.a2artes)) /
                       2 >=
                     6
                       ? "Aprovado"
@@ -167,6 +167,23 @@ const NotasAlunos = () => {
           </tbody>
         </Table>
       </ListGroup>
+
+    <Table>
+          <thead>
+            <tr>
+              <th>Materia adicional:</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {add.map((add) => (
+            <tr>
+              <td>{add.nome}</td>
+               <td>{add.valor}</td>
+            </tr>
+             ))}
+            </tbody>
+      </Table>
 
     
 
