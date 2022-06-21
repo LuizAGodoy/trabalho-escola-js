@@ -229,9 +229,8 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 <Dropdown.Item onClick={notasAlunos}>
                   Notas
                 </Dropdown.Item>
-                <Dropdown.Item onClick={dataMatadd}>Registrar Matéria Adicional</Dropdown.Item>
+                <Dropdown.Item onClick={teste}>Registrar Matéria Adicional</Dropdown.Item>
                 <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
-                <Dropdown.Item onClick={dataMatadd}>Materia Adicional</Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
