@@ -54,6 +54,16 @@ function Router() {
             <DataMatsecre logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
 
+          <Route exact path="/responsavel/data-prova">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <DataProva logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+
+          <Route exact path="/responsavel/notas">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <NotasAlunos logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+
 
           <Route exact path="/aluno/notas">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
