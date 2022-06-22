@@ -98,10 +98,21 @@ function Router() {
 
           {/* Responsaveis */}
 
+          <Route exact path="/responsavel">
+            <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <Aluno logoutUser={logoutUser} />
+          </Route>
+
+          <Route exact path="/responsavel/notas-turma">
+          <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <NotasTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+
           <Route exact path="/responsaveis/falta-turma">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <FaltaTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
+
         </Switch>
       </div>
     </BrowserRouter>
