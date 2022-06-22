@@ -119,14 +119,14 @@ const NotasAlunos = () => {
               post.map((post) => (
                 <tr>
                   <td>Historia</td>
-                  <td>{post.a1portugues}</td>
-                  <td>{post.a2portugues}</td>
+                  <td>{post.a1historia}</td>
+                  <td>{post.a2historia}</td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1historia) + parseInt(post.a2historia)) /
                       2}
                   </td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1historia) + parseInt(post.a2historia)) /
                       2 >=
                     6
                       ? "Aprovado"
@@ -151,11 +151,11 @@ const NotasAlunos = () => {
                   <td>{post.a1portugues}</td>
                   <td>{post.a2portugues}</td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1arte) + parseInt(post.a2arte)) /
                       2}
                   </td>
                   <td>
-                    {(parseInt(post.a1portugues) + parseInt(post.a2portugues)) /
+                    {(parseInt(post.a1arte) + parseInt(post.a2arte)) /
                       2 >=
                     6
                       ? "Aprovado"

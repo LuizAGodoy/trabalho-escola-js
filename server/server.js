@@ -133,7 +133,7 @@ server.get("/api/todos", (req, res) => {
 
 server.post("/api/alunos/:email/notas", (req, res) => {
   const { email } = req.params;
-  const { nota1, nota2, nota3, nota4 } = req.body;
+  const { nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8 } = req.body;
   fs.readFile("./notas.json", (err, data) => {
     if (err) {
       const status = 401;
@@ -149,6 +149,10 @@ server.post("/api/alunos/:email/notas", (req, res) => {
       a2portugues: nota2,
       a1matematica: nota3,
       a2matematica: nota4,
+      a1historia: nota5,
+      a2historia: nota6,
+      a1arte: nota7,
+      a2arte: nota8,
     });
     let writeData = fs.writeFile(
       "./notas.json",
@@ -163,7 +167,7 @@ server.post("/api/alunos/:email/notas", (req, res) => {
       }
     );
   });
-  res.status(200).json({ nota1, nota2 });
+  res.status(200).json({ nota1, nota2, nota3, nota4, nota5, nota6, nota7, nota8 });
 });
 
 // LISTAR TODAS AS NOTAS

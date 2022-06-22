@@ -54,6 +54,7 @@ function Router() {
           <Route exact path="/professor/register-nota">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <RegisterNota logoutUser={logoutUser} />
+            <NotasTurma logoutUser={logoutUser} />
           </Route>
 
           <Route exact path="/professor/register-prova">

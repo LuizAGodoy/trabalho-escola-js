@@ -15,6 +15,10 @@ const RegisterNota = () => {
   const [nota2, setNota2] = React.useState(null);
   const [nota3, setNota3] = React.useState(null);
   const [nota4, setNota4] = React.useState(null);
+  const [nota5, setNota5] = React.useState(null);
+  const [nota6, setNota6] = React.useState(null);
+  const [nota7, setNota7] = React.useState(null);
+  const [nota8, setNota8] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [validated, setValidated] = useState(false);
 
@@ -43,6 +47,10 @@ const RegisterNota = () => {
         nota2,
         nota3,
         nota4,
+        nota5,
+        nota6,
+        nota7,
+        nota8,
       })
       .then((response) => {
         console.log("response", response);
@@ -50,6 +58,11 @@ const RegisterNota = () => {
         setNota2("");
         setNota3("");
         setNota4("");
+        setNota5("");
+        setNota6("");
+        setNota7("");
+        setNota8("");
+        window.location.reload();
       })
       .catch((error) => setError(error.response.data.message));
 
@@ -87,7 +100,7 @@ const RegisterNota = () => {
                   <Form.Control
                   placeholder="Nota de 0 a 100"
                   size="sm"
-                    type="number"
+                  type="number"
                     id="nota1"
                     label="Nota 1"
                     value={nota1}
@@ -98,7 +111,7 @@ const RegisterNota = () => {
                   <Form.Control
                   placeholder="Nota de 0 a 100"
                   size="sm"
-                    type="number"
+                  type="number"
                     id="nota2"
                     label="Nota 2"
                     value={nota2}
@@ -113,7 +126,7 @@ const RegisterNota = () => {
                   <Form.Control
                   placeholder="Nota de 0 a 100"
                   size="sm"
-                    type="nota3"
+                  type="number"
                     id="nota3"
                     label="Nota 3"
                     value={nota3}
@@ -124,11 +137,63 @@ const RegisterNota = () => {
                   <Form.Control
                   placeholder="Nota de 0 a 100"
                   size="sm"
-                    type="nota4"
+                  type="number"
                     id="nota4"
                     label="Nota 4"
                     value={nota4}
                     onChange={(e) => setNota4(e.target.value)}
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>Historia</td>
+                <td>
+                  <Form.Control
+                  placeholder="Nota de 0 a 100"
+                  size="sm"
+                  type="number"
+                    id="nota5"
+                    label="Nota 5"
+                    value={nota5}
+                    onChange={(e) => setNota5(e.target.value)}
+                  />
+                </td>
+                <td>
+                  <Form.Control
+                  placeholder="Nota de 0 a 100"
+                  size="sm"
+                  type="number"
+                    id="nota6"
+                    label="Nota 6"
+                    value={nota6}
+                    onChange={(e) => setNota6(e.target.value)}
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>Artes</td>
+                <td>
+                  <Form.Control
+                  placeholder="Nota de 0 a 100"
+                  size="sm"
+                  type="number"
+                    id="nota7"
+                    label="Nota 7"
+                    value={nota7}
+                    onChange={(e) => setNota7(e.target.value)}
+                  />
+                </td>
+                <td>
+                  <Form.Control
+                  placeholder="Nota de 0 a 100"
+                  size="sm"
+                    type="number" 
+                    id="nota8"
+                    label="Nota 8"
+                    value={nota8}
+                    onChange={(e) => setNota8(e.target.value)}
                   />
                 </td>
               </tr>
@@ -140,52 +205,6 @@ const RegisterNota = () => {
           Enviar
         </Button>
       </Form>
-
-      {/* <ListGroup as="ul">
-        <ListGroup.Item as="li" active>
-          Lista de Alunos
-        </ListGroup.Item>
-        {post.map((post) => (
-          <ListGroup.Item as="li">{post.nome}</ListGroup.Item>
-        ))}
-      </ListGroup>
-
-      <Form noValidate autoComplete="off" onSubmit={handleSubmit}>
-          <h2>Inscreva-se</h2>
-          {error && <p style={{ color: "red" }}>{error}</p>}
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Nota1</Form.Label>
-            <Form.Control
-              type="nota1"
-              id="nota1"
-              label="Nota 1"
-              value={nota1}
-              onChange={(e) => setNota1(e.target.value)}
-            />
-                        <Form.Control
-              type="nota2"
-              id="nota2"
-              label="Nota 2"
-              value={nota2}
-              onChange={(e) => setNota2(e.target.value)}
-            />
-                                    <Form.Control
-              type="nota3"
-              id="nota3"
-              label="Nota 3"
-              value={nota3}
-              onChange={(e) => setNota3(e.target.value)}
-            />
-                                    <Form.Control
-              type="nota4"
-              id="nota4"
-              label="Nota 4"
-              value={nota4}
-              onChange={(e) => setNota4(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">Enviar</Button>
-      </Form> */}
     </Container>
   );
 };

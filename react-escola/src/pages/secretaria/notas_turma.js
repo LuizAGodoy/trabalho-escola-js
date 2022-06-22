@@ -67,24 +67,24 @@ const NotasTurma = () => {
               </tr>
               <tr>
                 <td>Historia</td>
-                <td>{post.a1portugues}</td>
-                <td>{post.a2matematica}</td>
+                <td>{post.a1historia}</td>
+                <td>{post.a2historia}</td>
                 <td>
-                  {(parseInt(post.a1portugues) + parseInt(post.a2matematica)) / 2}
+                  {(parseInt(post.a1historia) + parseInt(post.a2historia)) / 2}
                 </td>
                 <td>
-                  {(parseInt(post.a1portugues) + parseInt(post.a2matematica)) / 2 >= 6 ? "Aprovado": "Reprovado"}
+                  {(parseInt(post.a1historia) + parseInt(post.a1historia)) / 2 >= 6 ? "Aprovado": "Reprovado"}
                 </td>
               </tr>
               <tr>
                 <td>Artes</td>
-                <td>{post.a1matematica}</td>
-                <td>{post.a2portugues}</td>
+                <td>{post.a1arte}</td>
+                <td>{post.a2arte}</td>
                 <td>
-                  {(parseInt(post.a1matematica) + parseInt(post.a2portugues)) / 2}
+                  {(parseInt(post.a1arte) + parseInt(post.a2arte)) / 2}
                 </td>
                 <td>
-                  {(parseInt(post.a1matematica) + parseInt(post.a2portugues)) / 2 >= 6 ? "Aprovado": "Reprovado"}
+                  {(parseInt(post.a1arte) + parseInt(post.a2arte)) / 2 >= 6 ? "Aprovado": "Reprovado"}
                 </td>
               </tr>
             </tbody>
