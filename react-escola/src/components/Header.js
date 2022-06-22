@@ -161,7 +161,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
           <Navbar.Brand>
             <Nav.Link href="/aluno">
               <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
-              {isLogin.user.nome}
+              {isLogin.user.nome}{" "}
               {isLogin.user.anoLetivo}
             </Nav.Link>
           </Navbar.Brand>

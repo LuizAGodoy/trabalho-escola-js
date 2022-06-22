@@ -8,32 +8,20 @@ const Aluno = () => {
   const [email, setEmail] = React.useState(null);
   const [post, setPost] = React.useState(null);
   const [msg, setMsg] = React.useState(null);
+  const [msgR, setMsgR] = React.useState(null);
   const [error, setError] = React.useState(null);
+
   React.useEffect(() => {
     axios
-      .get("http://localhost:5000/api/alunos")
+      .get(`http://localhost:5000/api/${login}/msg`)
       .then((response) => {
         console.log("response", response.data);
-        setPost(response.data);
+        setMsgR(response.data);
       })
       .catch((error) => setError(error.response.data.message));
   }, []);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-    
-
-  //   axios
-  //     .post(`http://localhost:5000/api/${email}/msg`, {
-  //       msg,
-  //     })
-  //     .then((response) => {
-  //       console.log("response", response);
-  //       setMsg("");
-  //     })
-  //     .catch((error) => setError(error.response.data.message));
-
-  // };
+  if (!msgR) return null;
 
   return (
     <Container>
@@ -41,6 +29,18 @@ const Aluno = () => {
       <h2>{login}</h2>
       <p> Ano Letivo: {anoLetivo}</p>
 
+      {msgR.length === 0 ? (
+        <h1>Não há mensagens</h1>
+      ) : (
+        <ListGroup>
+          {msgR.map((msgR) => (
+            <div>
+              <ListGroup.Item>{msgR.msg}</ListGroup.Item>
+              <ListGroup.Item>{msgR.emailD}</ListGroup.Item> 
+            </div>
+          ))}
+        </ListGroup>
+      )}
     </Container>
   );
 };

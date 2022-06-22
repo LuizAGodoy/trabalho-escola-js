@@ -116,6 +116,19 @@ server.get("/api/alunos", (req, res) => {
   });
 });
 
+server.get("/api/todos", (req, res) => {
+  fs.readFile("./users.json", (err, data) => {
+    if (err) {
+      const status = 401;
+      const message = err;
+      res.status(status).json({ status, message });
+      return;
+    }
+    data = JSON.parse(data.toString());
+    res.status(200).json(data);
+  });
+});
+
 server.post("/api/alunos/:email/notas", (req, res) => {
   const { email } = req.params;
   const { nota1, nota2, nota3, nota4 } = req.body;
@@ -265,10 +278,9 @@ server.get("/api/alunos/:email/materiasadicional", (req, res) => {
   });
 });
 
-// Registrar materia adicional
 server.post("/api/:email/msg", (req, res) => {
   const { email } = req.params;
-  const { msg } = req.body;
+  const { msg, emailD } = req.body;
   fs.readFile("./msg.json", (err, data) => {
     if (err) {
       const status = 401;
@@ -278,9 +290,10 @@ server.post("/api/:email/msg", (req, res) => {
     }
     data = JSON.parse(data.toString());
 
-    data.materiaadicional.push({
+    data.msg.push({
       email: email,
-      msg: msg
+      msg: msg,
+      emailD: emailD
     });
     let writeData = fs.writeFile(
       "./msg.json",
@@ -297,8 +310,6 @@ server.post("/api/:email/msg", (req, res) => {
   });
   res.status(200).json({ msg });
 });
-
-// lista materias adicionais
 
 server.get("/api/:email/msg", (req, res) => {
   const { email } = req.params;
