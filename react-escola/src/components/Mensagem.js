@@ -29,6 +29,8 @@ const Mensagem = () => {
       .catch((error) => setError(error.response.data.message));
   }, []);
 
+  
+
   React.useEffect(() => {
     axios
       .get(`http://localhost:5000/api/${login}/msg`)
@@ -40,6 +42,7 @@ const Mensagem = () => {
   }, []);
 
   if (!msgR) return null;
+  if (!post) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();

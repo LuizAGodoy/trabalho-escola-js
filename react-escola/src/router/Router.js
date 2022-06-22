@@ -18,6 +18,7 @@ import Professor from "../pages/professor/professor";
 import Mensagem from "../components/Mensagem";
 import RegisterProvaAddSec from "../pages/secretaria/register_adicional";
 import NotasAlunosResp from "../pages/responsavel/notas_aluno_resp";
+import MateriaAddComp from "../components/MateriasAdd"
 
 
 
@@ -107,6 +108,8 @@ function Router() {
           <Route exact path="/secretaria/registrar">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <RegisterProvaAddSec />
+            
+            <MateriaAddComp />
           </Route>
 
           {/* Responsaveis */}

@@ -57,10 +57,11 @@ const RegisterProvaAdd = () => {
         </Form.Group>
 
         <Form.Group>
+          <Form.Label>Adicione a Materia</Form.Label>
           <Form.Control
             required
             placeholder="Nome da Material"
-            size="sm"
+            className="mb-2"
             type="text"
             id="nome"
             label="Nome"
@@ -71,19 +72,17 @@ const RegisterProvaAdd = () => {
           <Form.Control
             required
             placeholder="Valor da material"
-            size="sm"
             type="text"
             label="valor"
             value={valor}
             onChange={(e) => setValor(e.target.value)}
           />
-
-          <div class="p-3"> </div>
         </Form.Group>
-
+        <div className="d-grid gap-2 py-2">
         <Button variant="primary" type="submit">
           Enviar
         </Button>
+        </div>
       </Form>
     </Container>
   );

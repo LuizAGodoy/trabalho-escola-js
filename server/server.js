@@ -282,6 +282,21 @@ server.post("/api/alunos/:email/materiaAdicional", (req, res) => {
 
 // lista materias adicionais
 
+server.get("/api/alunos/materiasadicional", (req, res) => {
+  const { email } = req.params;
+  fs.readFile("./materia-adicional.json", (err, data) => {
+    if (err) {
+      const status = 401;
+      const message = err;
+      res.status(status).json({ status, message });
+      return;
+    }
+    data = JSON.parse(data.toString());
+    res.status(200).json(data);
+  });
+});
+
+
 server.get("/api/alunos/:email/materiasadicional", (req, res) => {
   const { email } = req.params;
   fs.readFile("./materia-adicional.json", (err, data) => {

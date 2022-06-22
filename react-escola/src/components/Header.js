@@ -73,6 +73,10 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/professor/registrar";
   };
 
+  const registrarMateriaAddS = () => {
+    window.location.href = "/secretaria/registrar-materia-add";
+  };
+
   const hydrateStateWithLocalStorage = () => {
     if (localStorage.hasOwnProperty("login")) {
       let value = localStorage.getItem("login");
