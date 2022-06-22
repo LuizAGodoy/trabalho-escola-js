@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "../pages/Login";
 import Header from "../components/Header";
 import Register from "../pages/Register";
-import RegisterProva from "../pages/professor/register_prova";
 import Home from "../pages/Home";
 import Aluno from "../pages/aluno/aluno";
 import NotasAlunos from "../pages/aluno/notas_aluno";

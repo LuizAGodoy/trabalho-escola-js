@@ -13,11 +13,10 @@ const Mensagem = () => {
   const isLoginTrue = JSON.parse(localStorage.getItem("login"));
   const login = isLoginTrue.user.email;
   const nome = isLoginTrue.user.nome;
-  const anoLetivo = isLoginTrue.user.anoLetivo;
   const [email, setEmail] = React.useState(null);
   const [post, setPost] = React.useState(null);
   const [msg, setMsg] = React.useState(null);
-  const [emailD, setEmailD] = React.useState(null);
+  
   const [error, setError] = React.useState(null);
   const [msgR, setMsgR] = React.useState(null);
   React.useEffect(() => {

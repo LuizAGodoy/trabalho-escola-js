@@ -13,7 +13,7 @@ import logo from "../assets/img/logo.png";
 import "../css/Header.css";
 
 const Header = ({ logoutUser, setLogoutUser }) => {
-  const [login, setLogin] = useState("");
+  const [login, setLogin] = useState(null);
   const isLogin = JSON.parse(localStorage.getItem("login"));
   useEffect(() => {
     hydrateStateWithLocalStorage();
@@ -191,7 +191,6 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 align="start"
                 title="Menu"
               >
-                <Dropdown.Item>Secretaria</Dropdown.Item>
                 <Dropdown.Item onClick={notasTurma}>Notas Turma</Dropdown.Item>
                 <Dropdown.Item onClick={faltaTurma}>Faltas Turma</Dropdown.Item>
               </DropdownButton>

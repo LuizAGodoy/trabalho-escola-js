@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Navbar, Nav, Image } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
-import escola from "../assets/img/escola.png";
 import escola2 from "../assets/img/escola2.png";
 import escola3 from "../assets/img/escola3.png";
 import escola4 from "../assets/img/escolabunner.png";

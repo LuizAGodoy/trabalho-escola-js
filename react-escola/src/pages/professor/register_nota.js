@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Button, Container, Form, ListGroup, Table } from "react-bootstrap";
+import { Button, Container, Form, Table } from "react-bootstrap";
 import '../../css/index.css';
 
 const RegisterNota = () => {

@@ -157,15 +157,22 @@ const Register = ({ setLogoutUser }) => {
 
           {/* APENAS SE O CADASTRO FOR IGUAL ALUNO */}
           {tipo === "Aluno" && (
-            <Form.Group className="mb-3" controlId="formBasic">
+            <Form.Group controlId="formBasic">
               <Form.Label>Ano Letivo</Form.Label>
-              <Form.Control
+              {/* lista de anos */}
+              {/* <Form.Control
                 type="anoLetivo"
                 id="anoLetivo"
                 label="anoLetivo"
                 value={anoLetivo}
                 onChange={(e) => setAnoLetivo(e.target.value)}
-              />
+              /> */}
+              <Form.Control as="select" value={anoLetivo} onChange={(e) => setAnoLetivo(e.target.value)}>
+                <option>Selecione</option>
+                <option>1º Ano</option>
+                <option>2º Ano</option>
+                <option>3º Ano</option>
+              </Form.Control>
             </Form.Group>
           )}
 

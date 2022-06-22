@@ -24,7 +24,7 @@ const FaltaTurma = () => {
   setarrayFalta(arrayFalta => [...arrayFalta, teste, teste1, teste2, teste3, teste4, teste5]);
   }, []);
 return (
-<div className="py-5">
+<div className="py-5 container">
       <ListGroup>
         {arrayFalta.map((arrayFalta)=>(
         <Table striped bordered hover>

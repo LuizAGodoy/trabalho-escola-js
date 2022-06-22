@@ -164,6 +164,22 @@ server.post("/api/alunos/:email/notas", (req, res) => {
   res.status(200).json({ nota1, nota2 });
 });
 
+// LISTAR TODAS AS NOTAS
+server.get("/api/alunos/notasAlunos", (req, res) => {
+  const { email } = req.params;
+  fs.readFile("./notas.json", (err, data) => {
+    if (err) {
+      const status = 401;
+      const message = err;
+      res.status(status).json({ status, message });
+      return;
+    }
+    data = JSON.parse(data.toString());
+
+    res.status(200).json(data);
+  });
+});
+
 // LISTAR TODAS AS NOTAS DE UM ALUNO
 server.get("/api/alunos/:email/notasAlunos", (req, res) => {
   const { email } = req.params;
@@ -180,6 +196,8 @@ server.get("/api/alunos/:email/notasAlunos", (req, res) => {
     res.status(200).json(notas);
   });
 });
+
+
 
 // registrar prova com dia e hora
 server.post("/api/provas", (req, res) => {

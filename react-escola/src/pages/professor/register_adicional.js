@@ -1,10 +1,9 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import React from "react";
+import { Form, Button, Container } from "react-bootstrap";
 
 const RegisterProvaAdd = () => {
   const isLoginTrue = JSON.parse(localStorage.getItem("login"));
-  const login = isLoginTrue.user.email;
   const [email, setEmail] = React.useState(null);
   const [post, setPost] = React.useState(null);
   const [error, setError] = React.useState(null);
@@ -20,22 +19,6 @@ const RegisterProvaAdd = () => {
       })
       .catch((error) => setError(error.response.data.message));
   }, []);
-
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
-  //     axios
-  //       .post(`http://localhost:5000/api/alunos/${email}/materiaAdicional`, {
-  //         nome,
-  //         valor
-  //       })
-  //       .then((response) => {
-  //         console.log("response", response);
-  //         setPost(response.data);
-  //         setNome(""),
-  //         setValor("")
-  //       })
-  //       .catch((error) => setError(error.response.data.message));
-  //   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
