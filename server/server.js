@@ -37,7 +37,7 @@ function isRegisterAuthenticated({ email }) {
 }
 
 server.post("/api/auth/register", (req, res) => {
-  const { email, password, tipo, nome, anoLetivo } = req.body;
+  const { email, password, tipo, nome, anoLetivo, alunoR } = req.body;
   if (isRegisterAuthenticated({ email })) {
     const status = 401;
     const message = "Email already exist";
@@ -63,6 +63,7 @@ server.post("/api/auth/register", (req, res) => {
       tipo: tipo,
       nome: nome,
       anoLetivo: anoLetivo,
+      alunoR: alunoR,
     });
     let writeData = fs.writeFile(
       "./users.json",
@@ -77,7 +78,7 @@ server.post("/api/auth/register", (req, res) => {
       }
     );
   });
-  const access_user = { email, tipo, nome, anoLetivo };
+  const access_user = { email, tipo, nome, anoLetivo, alunoR };
   const access_token = createToken({ email, password, tipo });
   res.status(200).json({ access_token, access_user });
 });
@@ -96,6 +97,7 @@ server.post("/api/auth/login", (req, res) => {
     tipo,
     nome: userdb.users.find((user) => user.email === email).nome,
     anoLetivo: userdb.users.find((user) => user.email === email).anoLetivo,
+    alunoR: userdb.users.find((user) => user.email === email).alunoR,
   };
   const access_token = createToken({ email, password, tipo });
   res.status(200).json({ access_token, access_user });
