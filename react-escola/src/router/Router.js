@@ -16,7 +16,7 @@ import Secretaria from "../pages/secretaria/secretaria";
 import Responsavel from "../pages/responsavel/responsavel";
 import Professor from "../pages/professor/professor";
 import Mensagem from "../components/Mensagem";
-
+import NotasAlunosResp from "../pages/responsavel/notas_aluno_resp";
 
 
 function Router() {
@@ -110,9 +110,9 @@ function Router() {
             <Mensagem />
           </Route>
 
-          <Route exact path="/responsavel/notas-turma">
+          <Route exact path="/responsavel/notas-aluno">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
-            <NotasTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <NotasAlunosResp logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
 
           <Route exact path="/responsavel/falta-turma">

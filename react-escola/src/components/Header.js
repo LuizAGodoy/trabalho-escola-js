@@ -46,7 +46,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
   };
 
   const notasTurmaresp = () => {
-    window.location.href = "/responsavel/notas-turma";
+    window.location.href = "/responsavel/notas-aluno";
   };
 
   const faltaTurmaresp = () => {

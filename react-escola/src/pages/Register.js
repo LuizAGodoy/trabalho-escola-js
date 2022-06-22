@@ -21,6 +21,8 @@ const Register = ({ setLogoutUser }) => {
   const [nome, setNome] = useState("");
   const [anoLetivo, setAnoLetivo] = useState("");
   const [error, setError] = useState("");
+  const [alunoR, setAlunoR] = useState("");
+  const [aluno, setAluno] = useState("");
   let history = useHistory();
 
   const handleChange = (event) => {
@@ -36,6 +38,7 @@ const Register = ({ setLogoutUser }) => {
         tipo,
         nome,
         anoLetivo,
+        alunoR: alunoR
       })
       .then((response) => {
         console.log("response", response);
@@ -69,6 +72,16 @@ const Register = ({ setLogoutUser }) => {
       })
       .catch((error) => setError(error.response));
   };
+
+  React.useEffect(() => {
+    axiox
+      .get("http://localhost:5000/api/alunos")
+      .then((response) => {
+        console.log("response", response.data);
+        setAluno(response.data);
+      })
+      .catch((error) => setError(error.response.data.message));
+  }, []);
 
   return (
     <div>
@@ -155,19 +168,14 @@ const Register = ({ setLogoutUser }) => {
             </Form.Group>
           </Row>
 
-          {/* APENAS SE O CADASTRO FOR IGUAL ALUNO */}
           {tipo === "Aluno" && (
             <Form.Group controlId="formBasic">
               <Form.Label>Ano Letivo</Form.Label>
-              {/* lista de anos */}
-              {/* <Form.Control
-                type="anoLetivo"
-                id="anoLetivo"
-                label="anoLetivo"
+              <Form.Control
+                as="select"
                 value={anoLetivo}
                 onChange={(e) => setAnoLetivo(e.target.value)}
-              /> */}
-              <Form.Control as="select" value={anoLetivo} onChange={(e) => setAnoLetivo(e.target.value)}>
+              >
                 <option>Selecione</option>
                 <option>1º Ano</option>
                 <option>2º Ano</option>
@@ -176,7 +184,23 @@ const Register = ({ setLogoutUser }) => {
             </Form.Group>
           )}
 
-          <div className="d-grid gap-2">
+          {tipo === "Responsavel" && (
+            <Form.Group controlId="formBasic">
+              <Form.Label>Aluno</Form.Label>
+              <Form.Control
+                as="select"
+                value={alunoR}
+                onChange={(e) => setAlunoR(e.target.value)}
+              >
+                <option>Selecione</option>
+                {aluno.map((aluno) => (
+                  <option key={aluno.email}>{aluno.email}</option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+          )}
+
+          <div className="d-grid gap-2 py-3">
             <Button variant="primary" type="submit">
               Registrar
             </Button>
