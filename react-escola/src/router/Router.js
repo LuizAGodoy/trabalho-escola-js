@@ -16,7 +16,7 @@ import Secretaria from "../pages/secretaria/secretaria";
 import Responsavel from "../pages/responsavel/responsavel";
 import Professor from "../pages/professor/professor";
 import Mensagem from "../components/Mensagem";
-
+import RegisterProvaAddSec from "../pages/secretaria/register_adicional";
 
 
 function Router() {
@@ -100,6 +100,11 @@ function Router() {
           <Route exact path="/secretaria/falta-turma">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <FaltaTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+          </Route>
+
+          <Route exact path="/secretaria/registrar">
+            <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <RegisterProvaAddSec />
           </Route>
 
           {/* Responsaveis */}
