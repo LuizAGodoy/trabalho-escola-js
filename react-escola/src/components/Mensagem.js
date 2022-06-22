@@ -61,18 +61,19 @@ const Mensagem = () => {
 
   const popover = (
     <Popover id="popover-basic">
-      <Popover.Header as="h3">Popover right</Popover.Header>
-      <Popover.Body>
+      <Popover.Header as="h3">Chat</Popover.Header>
+      <Popover.Body class="text-center">
 
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Aluno</Form.Label>
+              <Form.Label class="mb-2">Escolha a Pessoa</Form.Label>
               <Form.Control
                 required
                 as="select"
                 onChange={(e) => setEmail(e.target.value)}
+                class="p"
               >
-                <option>Selecione o Aluno</option>
+                <option>Selecione o Pessoa que deseja falar: </option>
                 {post.map((post) => (
                   <option>{post.email}</option>
                 ))}
@@ -86,22 +87,24 @@ const Mensagem = () => {
                 label="msg"
                 value={msg}
                 onChange={(e) => setMsg(e.target.value)}
+                class="mt-3"
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" class="btn btn-primary mb-1 mt-4" >
               Enviar
             </Button>
           </Form>
 
           {msgR.length === 0 ? (
-            <h1>Não há mensagens</h1>
+            <h4>Não há mensagens</h4>
           ) : (
             <ListGroup>
               {msgR.map((msgR) => (
                 <div>
-                                  <ListGroup.Item>{msgR.msg}</ListGroup.Item>
-                <ListGroup.Item>{msgR.emailD}</ListGroup.Item>
+                <ListGroup.Item>{msgR.msg} {''}</ListGroup.Item>
+                
+                <ListGroup.Item>{'Mensagem de:'}{msgR.emailD}</ListGroup.Item>
                 </div>
               ))}
             </ListGroup>
@@ -112,9 +115,9 @@ const Mensagem = () => {
   );
 
   return (
-    <Container>
+    <Container class="text-center">
       <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-        <Button variant="success">Click me to see</Button>
+        <Button variant="success" class=" text-center btn btn-primary mb-1 col-sm-1">CHAT</Button>
       </OverlayTrigger>
     </Container>
   );
