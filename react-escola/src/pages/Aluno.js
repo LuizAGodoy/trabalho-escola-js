@@ -39,24 +39,6 @@ const Alunos = () => {
       <h1>Bem Vindo!</h1>
       <p>{login}</p>
 
-      {/* <Form onSubmit={handleSubmit}> */}
-        <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Label>Aluno</Form.Label>
-          <Form.Control required as="select" onChange={(e) => setEmail(e.target.value)}>
-            <option>Selecione o Aluno</option>
-            {post.map((post) => (
-              <option>{post.email}</option>
-            ))}
-          </Form.Control>
-        </Form.Group>
-        
-
-        <Button variant="primary" type="submit" >
-          Enviar
-        </Button>
-      {/* </Form> */}
-
-
     </Container>
   );
 };
