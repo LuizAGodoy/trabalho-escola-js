@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import { Form, Button, Row, Col } from "react-bootstrap";
-const RegisterProva = () => {
+const RegisterDataProva = () => {
   const isLoginTrue = JSON.parse(localStorage.getItem("login"));
   const login = isLoginTrue.user.email;
 
@@ -31,6 +31,8 @@ const RegisterProva = () => {
         setDate("");
         setHora("");
         setMateria("");
+        // reload page
+        window.location.reload();
       })
       .catch((error) => setError(error.response.data.message));
   };
@@ -111,9 +113,6 @@ const RegisterProva = () => {
         
 
         <div className="d-grid gap-2">
-          <Button variant="secondary" href="/aluno/data-prova" size="sm ">
-            Ver Provas
-          </Button>
           <Button variant="primary" type="submit" size="lg">
             Registrar Prova
           </Button>
@@ -123,4 +122,4 @@ const RegisterProva = () => {
   );
 };
 
-export default RegisterProva;
+export default RegisterDataProva;

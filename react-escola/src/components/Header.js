@@ -57,12 +57,10 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/responsavel/falta-turma";
   };
 
-  const dataProvaProfessor = () => {
-    window.location.href = "/professor/data-prova";
-  };
+
 
   const registerProva = () => {
-    window.location.href = "/professor/data-prova";
+    window.location.href = "/professor/register-prova";
   };
 
   const registrarNota = () => {
@@ -106,9 +104,6 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 </Dropdown.Item>
                 <Dropdown.Item onClick={registrarNota}>
                   Registrar Notas
-                </Dropdown.Item>
-                <Dropdown.Item onClick={dataProvaProfessor}>
-                  Data da Prova
                 </Dropdown.Item>
                 <Dropdown.Item onClick={registrarMateriaAdd}>
                   Registrar Materia Add

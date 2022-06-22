@@ -12,6 +12,7 @@ import DataProva from "../pages/aluno/data_prova";
 import DataMatadd from "../pages/aluno/notas_aluno_mat_add";
 import RegisterNota from "../pages/professor/register_nota";
 import RegisterProvaAdd from "../pages/professor/register_adicional";
+import RegisterDataProva from "../pages/professor/register_prova";
 import Secretaria from "../pages/secretaria/secretaria";
 import Responsavel from "../pages/responsavel/responsavel";
 import Professor from "../pages/professor/professor";
@@ -19,6 +20,7 @@ import Mensagem from "../components/Mensagem";
 import RegisterProvaAddSec from "../pages/secretaria/register_adicional";
 import NotasAlunosResp from "../pages/responsavel/notas_aluno_resp";
 import MateriaAddComp from "../components/MateriasAdd"
+
 
 
 
@@ -54,9 +56,10 @@ function Router() {
             <RegisterNota logoutUser={logoutUser} />
           </Route>
 
-          <Route exact path="/professor/data-prova">
+          <Route exact path="/professor/register-prova">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
-            <DataProva logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <RegisterDataProva logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
+            <DataProva logoutUser={logoutUser} />
           </Route>
 
           <Route exact path="/professor/registrar">
@@ -64,8 +67,6 @@ function Router() {
             <RegisterProvaAdd />
             <MateriaAddComp />
           </Route>
-
-
 
           {/* aluno */}
           <Route exact path="/aluno">
