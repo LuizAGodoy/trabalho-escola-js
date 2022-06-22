@@ -68,6 +68,7 @@ function Router() {
           <Route exact path="/aluno">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <Aluno logoutUser={logoutUser} />
+            <Mensagem />
           </Route>
 
           <Route exact path="/aluno/notas">
@@ -89,6 +90,7 @@ function Router() {
           <Route exact path="/secretaria">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <Secretaria logoutUser={logoutUser} />
+            <Mensagem />
           </Route>
 
           <Route exact path="/secretaria/notas-turma">
@@ -106,6 +108,7 @@ function Router() {
           <Route exact path="/responsavel">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <Responsavel logoutUser={logoutUser} />
+            <Mensagem />
           </Route>
 
           <Route exact path="/responsavel/notas-turma">
