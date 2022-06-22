@@ -97,7 +97,10 @@ const Mensagem = () => {
           ) : (
             <ListGroup>
               {msgR.map((msgR) => (
-                <ListGroup.Item>{msgR.msg}</ListGroup.Item>
+                <div>
+                                  <ListGroup.Item>{msgR.msg}</ListGroup.Item>
+                <ListGroup.Item>{msgR.emailD}</ListGroup.Item>
+                </div>
               ))}
             </ListGroup>
           )}
