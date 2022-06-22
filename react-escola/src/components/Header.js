@@ -29,6 +29,14 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/aluno/notas";
   };
 
+  const dataMatadd = () => {
+    window.location.href = "/aluno/mat-add";
+  };
+
+  const dataProva = () => {
+    window.location.href = "/aluno/data-prova";
+  };
+
   const notasTurma = () => {
     window.location.href = "/secretaria/notas-turma";
   };
@@ -37,9 +45,15 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/secretaria/falta-turma";
   };
 
-  const dataProva = () => {
-    window.location.href = "/aluno/data-prova";
+  const notasTurmaresp = () => {
+    window.location.href = "/responsavel/notas-turma";
   };
+
+  const faltaTurmaresp = () => {
+    window.location.href = "/responsavel/falta-turma";
+  };
+
+
 
   const dataProvaProfessor = () => {
    window.location.href = "/professor/data-prova";
@@ -58,21 +72,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/professor/registrar"
   }
 
-  const dataMatsecre = () => {
-    window.location.href = "/responsavel/mateadd";
-  };
-  
-   const ResDataProva = () => {
-    window.location.href = "/responsavel/res-data-prova";
-  };
-  
-     const ResNotas = () => {
-    window.location.href = "/responsavel/res-notas";
-  };
 
-  const dataMatadd = () => {
-    window.location.href = "/aluno/mat-add";
-  };
   
 
   const hydrateStateWithLocalStorage = () => {
@@ -219,7 +219,8 @@ const Header = ({ logoutUser, setLogoutUser }) => {
         </Container>
       </Navbar>
     </div>
-  ) : isLogin.user.tipo === "Responsavel" ? (
+  ) : 
+  isLogin.user.tipo === "Responsavel" ? (
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
@@ -230,21 +231,20 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 id="input-group-dropdown-2"
                 align="start"
                 title="Menu"
-                >
-                <Dropdown.Item onClick={dataMatsecre}>Materia Adicional</Dropdown.Item>
-                <Dropdown.Item onClick={notasAlunos}>
-                  Notas
+              >
+                <Dropdown.Item>Responsavel</Dropdown.Item>
+                <Dropdown.Item onClick={notasTurmaresp}>
+                  Notas do Aluno
                 </Dropdown.Item>
-                <Dropdown.Item onClick={dataProva}>Registrar Matéria Adicional</Dropdown.Item>
-                <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
+                <Dropdown.Item onClick={faltaTurmaresp}>
+                  Faltas do Aluno
+                </Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
           <Navbar.Brand>
-            <Nav.Link href="/responsavel">
-              <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
-              {isLogin.user.nome}
-            </Nav.Link>
+            <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
+            {isLogin.user.nome}
           </Navbar.Brand>
           <Nav className="mr-auto">
             <InputGroup align="end">
@@ -260,7 +260,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
         </Container>
       </Navbar>
     </div>
-  ): (
+  ) :(
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>

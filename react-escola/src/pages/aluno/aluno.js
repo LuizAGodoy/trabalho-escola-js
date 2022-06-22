@@ -39,7 +39,7 @@ const Aluno = () => {
     <Container>
       <h1>Bem Vindo!</h1>
       <h2>{login}</h2>
-      <p>{anoLetivo}</p>
+      <p> Ano Letivo: {anoLetivo}</p>
 
     </Container>
   );
