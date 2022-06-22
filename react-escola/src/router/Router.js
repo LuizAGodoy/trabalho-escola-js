@@ -62,6 +62,7 @@ function Router() {
           <Route exact path="/professor/registrar">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <RegisterProvaAdd />
+            <MateriaAddComp />
           </Route>
 
 

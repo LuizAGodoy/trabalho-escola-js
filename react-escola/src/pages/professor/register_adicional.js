@@ -32,6 +32,8 @@ const RegisterProvaAdd = () => {
         console.log("response", response);
         setNome("");
         setValor("");
+        // reload page
+        window.location.reload();
       })
       .catch((error) => setError(error.response.data.message));
   };
