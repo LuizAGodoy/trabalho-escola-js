@@ -53,12 +53,9 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/responsavel/falta-turma";
   };
 
-
-
   const dataProvaProfessor = () => {
-   window.location.href = "/professor/data-prova";
-  }
-
+    window.location.href = "/professor/data-prova";
+  };
 
   const registerProva = () => {
     window.location.href = "/professor/data-prova";
@@ -69,11 +66,8 @@ const Header = ({ logoutUser, setLogoutUser }) => {
   };
 
   const registrarMateriaAdd = () => {
-    window.location.href = "/professor/registrar"
-  }
-
-
-  
+    window.location.href = "/professor/registrar";
+  };
 
   const hydrateStateWithLocalStorage = () => {
     if (localStorage.hasOwnProperty("login")) {
@@ -102,10 +96,15 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 <Dropdown.Item onClick={registerProva}>
                   Registrar Prova
                 </Dropdown.Item>
-                <Dropdown.Item onClick={registrarNota}>Registrar Notas</Dropdown.Item>
-                <Dropdown.Item onClick={dataProvaProfessor}>Data da Prova</Dropdown.Item>
-                <Dropdown.Item onClick={registrarMateriaAdd}>Registrar Materia Add</Dropdown.Item>
-                
+                <Dropdown.Item onClick={registrarNota}>
+                  Registrar Notas
+                </Dropdown.Item>
+                <Dropdown.Item onClick={dataProvaProfessor}>
+                  Data da Prova
+                </Dropdown.Item>
+                <Dropdown.Item onClick={registrarMateriaAdd}>
+                  Registrar Materia Add
+                </Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
@@ -115,14 +114,10 @@ const Header = ({ logoutUser, setLogoutUser }) => {
             </Nav.Link>
           </Navbar.Brand>
           <Container>
-            <Navbar.Brand>
-              {isLogin.user.nome}
-            </Navbar.Brand>
+            <Navbar.Brand>{isLogin.user.nome}</Navbar.Brand>
           </Container>
 
-          <Navbar.Brand className="tipocss">
-              {isLogin.user.tipo}
-          </Navbar.Brand>
+          <Navbar.Brand className="tipocss">{isLogin.user.tipo}</Navbar.Brand>
 
           <Nav className="mr-auto">
             <InputGroup align="end">
@@ -154,17 +149,22 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                   Minhas Notas
                 </Dropdown.Item>
                 <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
-                <Dropdown.Item onClick={dataMatadd}>Materia Adicional</Dropdown.Item>
+                <Dropdown.Item onClick={dataMatadd}>
+                  Materia Adicional
+                </Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
           <Navbar.Brand>
             <Nav.Link href="/aluno">
-              <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
-              {isLogin.user.nome}{" "}
-              {isLogin.user.anoLetivo}
+              <Image src={logo} width="50" height="30" />
             </Nav.Link>
           </Navbar.Brand>
+          <Container>
+            <Navbar.Brand>{isLogin.user.nome}</Navbar.Brand>
+          </Container>
+
+          <Navbar.Brand className="tipocss">{isLogin.user.tipo}, {isLogin.user.anoLetivo} </Navbar.Brand>
           <Nav className="mr-auto">
             <InputGroup align="end">
               <DropdownButton
@@ -192,19 +192,21 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 title="Menu"
               >
                 <Dropdown.Item>Secretaria</Dropdown.Item>
-                <Dropdown.Item onClick={notasTurma}>
-                  Notas Turma
-                </Dropdown.Item>
-                <Dropdown.Item onClick={faltaTurma}>
-                  Faltas Turma
-                </Dropdown.Item>
+                <Dropdown.Item onClick={notasTurma}>Notas Turma</Dropdown.Item>
+                <Dropdown.Item onClick={faltaTurma}>Faltas Turma</Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
           <Navbar.Brand>
-            <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
-            {isLogin.user.nome}
+            <Nav.Link href="/secretaria">
+              <Image src={logo} width="50" height="30" />
+            </Nav.Link>
           </Navbar.Brand>
+          <Container>
+            <Navbar.Brand>{isLogin.user.nome}</Navbar.Brand>
+          </Container>
+
+          <Navbar.Brand className="tipocss">{isLogin.user.tipo}</Navbar.Brand>
           <Nav className="mr-auto">
             <InputGroup align="end">
               <DropdownButton
@@ -219,8 +221,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
         </Container>
       </Navbar>
     </div>
-  ) : 
-  isLogin.user.tipo === "Responsavel" ? (
+  ) : isLogin.user.tipo === "Responsavel" ? (
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
@@ -243,9 +244,15 @@ const Header = ({ logoutUser, setLogoutUser }) => {
             </InputGroup>
           </Navbar.Brand>
           <Navbar.Brand>
-            <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
-            {isLogin.user.nome}
+            <Nav.Link href="/responsavel">
+              <Image src={logo} width="50" height="30" />
+            </Nav.Link>
           </Navbar.Brand>
+          <Container>
+            <Navbar.Brand>{isLogin.user.nome}</Navbar.Brand>
+          </Container>
+
+          <Navbar.Brand className="tipocss">{isLogin.user.tipo}</Navbar.Brand>
           <Nav className="mr-auto">
             <InputGroup align="end">
               <DropdownButton
@@ -260,7 +267,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
         </Container>
       </Navbar>
     </div>
-  ) :(
+  ) : (
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
