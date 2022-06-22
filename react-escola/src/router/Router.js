@@ -16,6 +16,7 @@ import RegisterProvaAdd from "../pages/professor/register_adicional";
 import Secretaria from "../pages/secretaria/secretaria";
 import Responsavel from "../pages/responsavel/responsavel";
 import Professor from "../pages/professor/professor";
+import Mensagem from "../components/Mensagem";
 
 
 
@@ -43,6 +44,7 @@ function Router() {
           <Route exact path="/professor">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <Professor logoutUser={logoutUser} />
+            <Mensagem />
           </Route>
 
           <Route exact path="/professor/register-nota">
