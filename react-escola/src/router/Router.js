@@ -115,7 +115,7 @@ function Router() {
             <NotasTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>
 
-          <Route exact path="/responsaveis/falta-turma">
+          <Route exact path="/responsavel/falta-turma">
           <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
             <FaltaTurma logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
           </Route>

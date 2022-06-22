@@ -232,7 +232,6 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 align="start"
                 title="Menu"
               >
-                <Dropdown.Item>Responsavel</Dropdown.Item>
                 <Dropdown.Item onClick={notasTurmaresp}>
                   Notas do Aluno
                 </Dropdown.Item>
