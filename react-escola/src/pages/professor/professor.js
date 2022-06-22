@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Container, Form, ListGroup, Table } from "react-bootstrap";
-const Alunos = () => {
+const Professor = () => {
   const isLoginTrue = JSON.parse(localStorage.getItem("login"));
   const login = isLoginTrue.user.email;
+  const anoLetivo = isLoginTrue.user.anoLetivo;
   const [email, setEmail] = React.useState(null);
   const [post, setPost] = React.useState(null);
   const [msg, setMsg] = React.useState(null);
@@ -37,10 +38,10 @@ const Alunos = () => {
   return (
     <Container>
       <h1>Bem Vindo!</h1>
-      <p>{login}</p>
+      <h2>{login}</h2>
 
     </Container>
   );
 };
 
-export default Alunos;
+export default Professor;

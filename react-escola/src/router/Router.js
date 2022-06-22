@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Register from "../pages/Register";
 import RegisterProva from "../pages/professor/register_prova";
 import Home from "../pages/Home";
-import Aluno from "../pages/Aluno";
+import Aluno from "../pages/aluno/aluno";
 import NotasAlunos from "../pages/aluno/notas_aluno";
 import NotasTurma from "../pages/secretaria/notas_turma";
 import FaltaTurma from "../pages/secretaria/falta_turma";
@@ -13,6 +13,9 @@ import DataProva from "../pages/aluno/data_prova";
 import DataMatadd from "../pages/aluno/notas_aluno_mat_add";
 import RegisterNota from "../pages/professor/register_nota";
 import RegisterProvaAdd from "../pages/professor/register_adicional";
+import Secretaria from "../pages/secretaria/secretaria";
+import Responsavel from "../pages/responsavel/responsavel";
+import Professor from "../pages/professor/professor";
 
 
 
@@ -39,7 +42,7 @@ function Router() {
           {/* Professor */}
           <Route exact path="/professor">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
-            <Aluno logoutUser={logoutUser} />
+            <Professor logoutUser={logoutUser} />
           </Route>
 
           <Route exact path="/professor/register-nota">
@@ -83,7 +86,7 @@ function Router() {
           {/* Secretaria */}
           <Route exact path="/secretaria">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
-            <Aluno logoutUser={logoutUser} />
+            <Secretaria logoutUser={logoutUser} />
           </Route>
 
           <Route exact path="/secretaria/notas-turma">
@@ -100,7 +103,7 @@ function Router() {
 
           <Route exact path="/responsavel">
             <Header logoutUser={logoutUser} setLogoutUser={setLogoutUser} />
-            <Aluno logoutUser={logoutUser} />
+            <Responsavel logoutUser={logoutUser} />
           </Route>
 
           <Route exact path="/responsavel/notas-turma">

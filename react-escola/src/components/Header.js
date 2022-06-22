@@ -162,6 +162,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
             <Nav.Link href="/aluno">
               <Image src={logo} width="50" height="30" /> {isLogin.user.tipo}{" "}
               {isLogin.user.nome}
+              {isLogin.user.anoLetivo}
             </Nav.Link>
           </Navbar.Brand>
           <Nav className="mr-auto">

@@ -19,10 +19,9 @@ const Register = ({ setLogoutUser }) => {
   const [password, setPassword] = useState("");
   const [tipo, setTipo] = useState("");
   const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
+  const [anoLetivo, setAnoLetivo] = useState("");
   const [error, setError] = useState("");
   let history = useHistory();
-
 
   const handleChange = (event) => {
     setTipo(event.target.value);
@@ -36,7 +35,7 @@ const Register = ({ setLogoutUser }) => {
         password,
         tipo,
         nome,
-        cpf,
+        anoLetivo,
       })
       .then((response) => {
         console.log("response", response);
@@ -53,7 +52,7 @@ const Register = ({ setLogoutUser }) => {
         setPassword("");
         setTipo("");
         setNome("");
-        setCpf("");
+        setAnoLetivo("");
         setLogoutUser(false);
         if (tipo === "Professor") {
           history.push("/professor");
@@ -97,7 +96,6 @@ const Register = ({ setLogoutUser }) => {
             />
           </Form.Group>
 
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -118,16 +116,7 @@ const Register = ({ setLogoutUser }) => {
               onChange={(e) => setNome(e.target.value)}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasic">
-            <Form.Label>Cpf</Form.Label>
-            <Form.Control
-              type="cpf"
-              id="cpf"
-              label="Cpf"
-              value={cpf}
-              onChange={(e) => setCpf(e.target.value)}
-            />
-          </Form.Group>
+
           <Row className="mb-3">
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check
@@ -155,17 +144,30 @@ const Register = ({ setLogoutUser }) => {
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
 
-                <Form.Check
+              <Form.Check
                 inline
                 label="Responsavel"
                 checked={tipo === "Responsavel"}
                 onChange={handleChange}
                 value="Responsavel"
                 inputProps={{ "aria-label": "primary checkbox" }}
-              />  
-
+              />
             </Form.Group>
           </Row>
+
+          {/* APENAS SE O CADASTRO FOR IGUAL ALUNO */}
+          {tipo === "Aluno" && (
+            <Form.Group className="mb-3" controlId="formBasic">
+              <Form.Label>Ano Letivo</Form.Label>
+              <Form.Control
+                type="anoLetivo"
+                id="anoLetivo"
+                label="anoLetivo"
+                value={anoLetivo}
+                onChange={(e) => setAnoLetivo(e.target.value)}
+              />
+            </Form.Group>
+          )}
 
           <div className="d-grid gap-2">
             <Button variant="primary" type="submit">

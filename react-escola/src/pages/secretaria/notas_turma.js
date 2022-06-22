@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Button, Container, Form, ListGroup, Table } from "react-bootstrap";
 import '../../css/index.css';
-import './notas_turma.css';
+import '../../css/notas_turma.css';
 
 const NotasTurma = () => {
   const isLoginTrue = JSON.parse(localStorage.getItem("login"));
