@@ -45,6 +45,10 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/secretaria/falta-turma";
   };
 
+  const registrarMateriaAddSec = () => {
+    window.location.href = "/secretaria/registrar";
+  };
+
   const notasTurmaresp = () => {
     window.location.href = "/responsavel/notas-aluno";
   };
@@ -193,6 +197,9 @@ const Header = ({ logoutUser, setLogoutUser }) => {
               >
                 <Dropdown.Item onClick={notasTurma}>Notas Turma</Dropdown.Item>
                 <Dropdown.Item onClick={faltaTurma}>Faltas Turma</Dropdown.Item>
+                <Dropdown.Item onClick={registrarMateriaAddSec}>
+                  Registrar Materia Add
+                </Dropdown.Item>
               </DropdownButton>
             </InputGroup>
           </Navbar.Brand>
