@@ -265,6 +265,57 @@ server.get("/api/alunos/:email/materiasadicional", (req, res) => {
   });
 });
 
+// Registrar materia adicional
+server.post("/api/:email/msg", (req, res) => {
+  const { email } = req.params;
+  const { msg } = req.body;
+  fs.readFile("./msg.json", (err, data) => {
+    if (err) {
+      const status = 401;
+      const message = err;
+      res.status(status).json({ status, message });
+      return;
+    }
+    data = JSON.parse(data.toString());
+
+    data.materiaadicional.push({
+      email: email,
+      msg: msg
+    });
+    let writeData = fs.writeFile(
+      "./msg.json",
+      JSON.stringify(data),
+      (err, result) => {
+        if (err) {
+          const status = 401;
+          const message = err;
+          res.status(status).json({ status, message });
+          return;
+        }
+      }
+    );
+  });
+  res.status(200).json({ msg });
+});
+
+// lista materias adicionais
+
+server.get("/api/:email/msg", (req, res) => {
+  const { email } = req.params;
+  fs.readFile("./msg.json", (err, data) => {
+    if (err) {
+      const status = 401;
+      const message = err;
+      res.status(status).json({ status, message });
+      return;
+    }
+    data = JSON.parse(data.toString());
+    const msg = data.msg.filter((msg) => msg.email === email);
+
+    res.status(200).json(msg);
+  });
+});
+
 server.listen(5000, () => {
   console.log("Running fake api json server");
 });

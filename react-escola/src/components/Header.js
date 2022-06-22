@@ -41,6 +41,10 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/aluno/data-prova";
   };
 
+  const dataProvaProfessor = () => {
+   window.location.href = "/professor/data-prova";
+  }
+
 
   const registerProva = () => {
     window.location.href = "/professor/data-prova";
@@ -50,8 +54,8 @@ const Header = ({ logoutUser, setLogoutUser }) => {
     window.location.href = "/professor/register-nota";
   };
 
-  const teste = () => {
-    window.location.href = "/registrar"
+  const registrarMateriaAdd = () => {
+    window.location.href = "/professor/registrar"
   }
 
   const dataMatsecre = () => {
@@ -69,6 +73,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
   const dataMatadd = () => {
     window.location.href = "/aluno/mat-add";
   };
+  
 
   const hydrateStateWithLocalStorage = () => {
     if (localStorage.hasOwnProperty("login")) {
@@ -98,8 +103,8 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                   Registrar Prova
                 </Dropdown.Item>
                 <Dropdown.Item onClick={registrarNota}>Registrar Notas</Dropdown.Item>
-                <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
-                <Dropdown.Item onClick={teste}>Registrar Materia Add</Dropdown.Item>
+                <Dropdown.Item onClick={dataProvaProfessor}>Data da Prova</Dropdown.Item>
+                <Dropdown.Item onClick={registrarMateriaAdd}>Registrar Materia Add</Dropdown.Item>
                 
               </DropdownButton>
             </InputGroup>
@@ -229,7 +234,7 @@ const Header = ({ logoutUser, setLogoutUser }) => {
                 <Dropdown.Item onClick={notasAlunos}>
                   Notas
                 </Dropdown.Item>
-                <Dropdown.Item onClick={teste}>Registrar Matéria Adicional</Dropdown.Item>
+                <Dropdown.Item onClick={dataProva}>Registrar Matéria Adicional</Dropdown.Item>
                 <Dropdown.Item onClick={dataProva}>Data da Prova</Dropdown.Item>
               </DropdownButton>
             </InputGroup>
